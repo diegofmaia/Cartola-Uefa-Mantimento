@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<header>
+		<h3> </h3>
+</header>
+<div class="pure-g-r content-ribbon">
+    <div class="pure-u-1">
+        <div class="l-box">
+        	<h1>   </h1>
+            <h1 class="content-subhead">Cartoleiros da Liga</h1>
+            <h2>  </h2>
+        </div>
+    </div>
+</div>
+{% for cartola in cartolas %}
+  	<a>
+  		{% if cartola.cartolaImagem %}
+  			<img src="{{ cartola.cartolaImagem.url }}"/>
+  		{% else %}
+  			<img src="{% static 'media/cartola02-200x150.png' %}" alt="{{ cartola.cartolaTime }}" />
+  		{% endif %}
+  	</a>  
+{% endfor %}
+{% endblock %}
